@@ -39,22 +39,21 @@ function updateYourGuesses() {
     }
 
 }
-window.onkeyup = function (event) {
+window.onkeypress = function (event) {
 
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     updateYourGuesses();
-    if (letters.indexOf(userGuess) != -1) {
-        if (parseInt(guesses_left.innerHTML) > 0 && parseInt(guesses_left.innerHTML) <= 9) {
-            if (letter === userGuess) {
-                won();
-                reStart();
-                letter = randomLetter();
-            } else {
-                guessDecrement();
-            }
-        } else {
-            lost();
+    if (parseInt(guesses_left.innerHTML) > 0 && parseInt(guesses_left.innerHTML) <= 9) {
+        if (letter === userGuess) {
+            won();
             reStart();
+            letter = randomLetter();
+        } else {
+            guessDecrement();
         }
+    } else {
+        lost();
+        reStart();
     }
+
 }
