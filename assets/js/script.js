@@ -43,7 +43,7 @@ window.onkeyup = function (event) {
 
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     updateYourGuesses();
-    if (parseInt(guesses_left.innerHTML) > 0 && parseInt(guesses_left.innerHTML) <= 9) {
+    if (parseInt(guesses_left.innerHTML) > 0 && parseInt(guesses_left.innerHTML) <= 9&&letters.indexOf(userGuess)!=-1) {
         if (letter === userGuess) {
             won();
             reStart();
