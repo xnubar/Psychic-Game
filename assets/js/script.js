@@ -42,7 +42,6 @@ function updateYourGuesses() {
 window.onkeyup = function (event) {
 
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log(letter)
     updateYourGuesses();
     if (parseInt(guesses_left.innerHTML) > 0 && parseInt(guesses_left.innerHTML) <= 9) {
         if (letter === userGuess) {
